@@ -80,7 +80,7 @@ const config: Config = {
         },
 
         {
-          href: 'https://github.com/izma/physical-ai-textbook',
+          href: 'https://github.com/IzmaIkhlaque/Physical-AI-Humanoid-Robotics/textbook',
           label: 'GitHub',
           position: 'right',
         },
@@ -131,7 +131,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/izma/physical-ai-textbook',
+              href: 'https://github.com/IzmaIkhlaque/Physical-AI-Humanoid-Robotics/textbook',
             },
           ],
         },
