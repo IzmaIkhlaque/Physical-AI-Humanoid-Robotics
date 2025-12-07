@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="ctrlBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#001F3F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#002952;stop-opacity:1" />
+    </linearGradient>
+    <marker id="ctrlArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a9eff"/>
+    </marker>
+    <marker id="feedbackArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#ctrlBg)"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="Inter, Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle" font-weight="700">
+    Robot Control Loop Architecture
+  </text>
+
+  <!-- Reference/Setpoint -->
+  <g transform="translate(80, 200)">
+    <circle cx="0" cy="0" r="30" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+    <text x="0" y="5" font-family="Inter, Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">r(t)</text>
+    <text x="0" y="-50" font-family="Inter, Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle">Reference</text>
+    <text x="0" y="-35" font-family="Inter, Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Desired State</text>
+  </g>
+
+  <!-- Summing junction -->
+  <g transform="translate(170, 200)">
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#4a9eff" stroke-width="2"/>
+    <line x1="-10" y1="0" x2="10" y2="0" stroke="#4a9eff" stroke-width="2"/>
+    <line x1="0" y1="-10" x2="0" y2="10" stroke="#4a9eff" stroke-width="2"/>
+    <text x="12" y="-8" font-family="Inter, Arial, sans-serif" font-size="10" fill="#ffffff">+</text>
+    <text x="12" y="20" font-family="Inter, Arial, sans-serif" font-size="10" fill="#f59e0b">-</text>
+  </g>
+
+  <!-- Arrow from Reference to Summing -->
+  <line x1="110" y1="200" x2="148" y2="200" stroke="#4a9eff" stroke-width="2" marker-end="url(#ctrlArrow)"/>
+
+  <!-- Controller -->
+  <g transform="translate(290, 200)">
+    <rect x="-50" y="-40" width="100" height="80" rx="8" fill="#4a9eff" stroke="#ffffff" stroke-width="2"/>
+    <text x="0" y="-10" font-family="Inter, Arial, sans-serif" font-size="14" fill="#001F3F" text-anchor="middle" font-weight="600">Controller</text>
+    <text x="0" y="10" font-family="Inter, Arial, sans-serif" font-size="11" fill="#001F3F" text-anchor="middle">PID/MPC</text>
+    <text x="0" y="25" font-family="Inter, Arial, sans-serif" font-size="10" fill="#001F3F" text-anchor="middle">Neural Net</text>
+  </g>
+
+  <!-- Arrow from Summing to Controller -->
+  <line x1="192" y1="200" x2="238" y2="200" stroke="#4a9eff" stroke-width="2" marker-end="url(#ctrlArrow)"/>
+  <text x="215" y="190" font-family="Inter, Arial, sans-serif" font-size="10" fill="#ffffff">e(t)</text>
+
+  <!-- Actuator/Plant -->
+  <g transform="translate(460, 200)">
+    <rect x="-60" y="-40" width="120" height="80" rx="8" fill="#4a9eff" stroke="#ffffff" stroke-width="2"/>
+    <text x="0" y="-10" font-family="Inter, Arial, sans-serif" font-size="14" fill="#001F3F" text-anchor="middle" font-weight="600">Actuators</text>
+    <text x="0" y="10" font-family="Inter, Arial, sans-serif" font-size="11" fill="#001F3F" text-anchor="middle">Motors/Servos</text>
+    <text x="0" y="25" font-family="Inter, Arial, sans-serif" font-size="10" fill="#001F3F" text-anchor="middle">Hydraulics</text>
+  </g>
+
+  <!-- Arrow from Controller to Actuator -->
+  <line x1="342" y1="200" x2="398" y2="200" stroke="#4a9eff" stroke-width="2" marker-end="url(#ctrlArrow)"/>
+  <text x="370" y="190" font-family="Inter, Arial, sans-serif" font-size="10" fill="#ffffff">u(t)</text>
+
+  <!-- Robot/Plant -->
+  <g transform="translate(630, 200)">
+    <rect x="-50" y="-40" width="100" height="80" rx="8" fill="#4a9eff" stroke="#ffffff" stroke-width="2"/>
+    <text x="0" y="-10" font-family="Inter, Arial, sans-serif" font-size="14" fill="#001F3F" text-anchor="middle" font-weight="600">Robot</text>
+    <text x="0" y="10" font-family="Inter, Arial, sans-serif" font-size="11" fill="#001F3F" text-anchor="middle">Physical</text>
+    <text x="0" y="25" font-family="Inter, Arial, sans-serif" font-size="10" fill="#001F3F" text-anchor="middle">System</text>
+  </g>
+
+  <!-- Arrow from Actuator to Robot -->
+  <line x1="522" y1="200" x2="578" y2="200" stroke="#4a9eff" stroke-width="2" marker-end="url(#ctrlArrow)"/>
+
+  <!-- Output -->
+  <g transform="translate(750, 200)">
+    <circle cx="0" cy="0" r="30" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+    <text x="0" y="5" font-family="Inter, Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">y(t)</text>
+    <text x="0" y="-50" font-family="Inter, Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle">Output</text>
+    <text x="0" y="-35" font-family="Inter, Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Actual State</text>
+  </g>
+
+  <!-- Arrow from Robot to Output -->
+  <line x1="682" y1="200" x2="718" y2="200" stroke="#4a9eff" stroke-width="2" marker-end="url(#ctrlArrow)"/>
+
+  <!-- Sensors (Feedback path) -->
+  <g transform="translate(460, 350)">
+    <rect x="-60" y="-30" width="120" height="60" rx="8" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+    <text x="0" y="-5" font-family="Inter, Arial, sans-serif" font-size="14" fill="#001F3F" text-anchor="middle" font-weight="600">Sensors</text>
+    <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#001F3F" text-anchor="middle">Encoders/IMU/Force</text>
+  </g>
+
+  <!-- Feedback path lines -->
+  <path d="M 750 232 L 750 350 L 522 350" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#feedbackArrow)"/>
+  <path d="M 398 350 L 170 350 L 170 222" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#feedbackArrow)"/>
+
+  <!-- Control frequencies -->
+  <g transform="translate(0, 430)">
+    <rect x="50" y="0" width="180" height="50" rx="8" fill="#001F3F" stroke="#4a9eff"/>
+    <text x="140" y="20" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a9eff" text-anchor="middle" font-weight="600">Low-Level Control</text>
+    <text x="140" y="38" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">1-10 kHz</text>
+
+    <rect x="260" y="0" width="180" height="50" rx="8" fill="#001F3F" stroke="#4a9eff"/>
+    <text x="350" y="20" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a9eff" text-anchor="middle" font-weight="600">Motion Control</text>
+    <text x="350" y="38" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">100-1000 Hz</text>
+
+    <rect x="470" y="0" width="180" height="50" rx="8" fill="#001F3F" stroke="#4a9eff"/>
+    <text x="560" y="20" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a9eff" text-anchor="middle" font-weight="600">Planning/AI</text>
+    <text x="560" y="38" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">10-100 Hz</text>
+  </g>
+
+  <!-- Error signal label -->
+  <text x="400" y="85" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">
+    e(t) = r(t) - y(t)  →  Error Signal
+  </text>
+</svg>

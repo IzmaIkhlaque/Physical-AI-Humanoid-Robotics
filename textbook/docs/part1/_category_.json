@@ -1,0 +1,8 @@
+{
+  "label": "Part 1: Introduction to Physical AI",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Explore the foundations of Physical AI, from basic concepts to the intersection of artificial intelligence and robotics. This section covers the fundamentals you need to understand before diving into humanoid robotics."
+  }
+}

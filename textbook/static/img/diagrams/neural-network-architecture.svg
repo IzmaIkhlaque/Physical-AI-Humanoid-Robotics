@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="nnBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#001F3F"/>
+      <stop offset="100%" style="stop-color:#002952"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#nnBg)"/>
+  <text x="400" y="40" font-family="Inter, Arial" font-size="24" fill="#fff" text-anchor="middle" font-weight="700">Neural Network Architecture</text>
+
+  <!-- Input Layer -->
+  <g transform="translate(100, 150)">
+    <text x="0" y="-20" font-family="Inter" font-size="14" fill="#4a9eff" text-anchor="middle">Input</text>
+    <circle cx="0" cy="0" r="20" fill="#4a9eff"/>
+    <circle cx="0" cy="60" r="20" fill="#4a9eff"/>
+    <circle cx="0" cy="120" r="20" fill="#4a9eff"/>
+    <circle cx="0" cy="180" r="20" fill="#4a9eff"/>
+  </g>
+
+  <!-- Hidden Layer 1 -->
+  <g transform="translate(280, 120)">
+    <text x="0" y="-20" font-family="Inter" font-size="14" fill="#10b981" text-anchor="middle">Hidden 1</text>
+    <circle cx="0" cy="0" r="20" fill="#10b981"/>
+    <circle cx="0" cy="50" r="20" fill="#10b981"/>
+    <circle cx="0" cy="100" r="20" fill="#10b981"/>
+    <circle cx="0" cy="150" r="20" fill="#10b981"/>
+    <circle cx="0" cy="200" r="20" fill="#10b981"/>
+  </g>
+
+  <!-- Hidden Layer 2 -->
+  <g transform="translate(460, 140)">
+    <text x="0" y="-20" font-family="Inter" font-size="14" fill="#f59e0b" text-anchor="middle">Hidden 2</text>
+    <circle cx="0" cy="0" r="20" fill="#f59e0b"/>
+    <circle cx="0" cy="60" r="20" fill="#f59e0b"/>
+    <circle cx="0" cy="120" r="20" fill="#f59e0b"/>
+    <circle cx="0" cy="180" r="20" fill="#f59e0b"/>
+  </g>
+
+  <!-- Output Layer -->
+  <g transform="translate(640, 180)">
+    <text x="0" y="-20" font-family="Inter" font-size="14" fill="#ef4444" text-anchor="middle">Output</text>
+    <circle cx="0" cy="0" r="20" fill="#ef4444"/>
+    <circle cx="0" cy="70" r="20" fill="#ef4444"/>
+    <circle cx="0" cy="140" r="20" fill="#ef4444"/>
+  </g>
+
+  <!-- Connections (simplified) -->
+  <g stroke="#4a9eff" stroke-width="0.5" opacity="0.3">
+    <line x1="120" y1="150" x2="260" y2="120"/>
+    <line x1="120" y1="210" x2="260" y2="170"/>
+    <line x1="120" y1="270" x2="260" y2="220"/>
+    <line x1="300" y1="120" x2="440" y2="140"/>
+    <line x1="300" y1="220" x2="440" y2="200"/>
+    <line x1="480" y1="140" x2="620" y2="180"/>
+    <line x1="480" y1="260" x2="620" y2="250"/>
+  </g>
+
+  <text x="400" y="460" font-family="Inter" font-size="12" fill="#fff" text-anchor="middle">Weights connect neurons across layers</text>
+</svg>

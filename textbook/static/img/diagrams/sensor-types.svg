@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <defs>
+    <linearGradient id="sensorBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#001F3F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#002952;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="url(#sensorBg)"/>
+
+  <!-- Title -->
+  <text x="450" y="40" font-family="Inter, Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle" font-weight="700">
+    Robot Sensor Types &amp; Applications
+  </text>
+
+  <!-- Category 1: Vision Sensors -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="200" height="200" rx="12" fill="#4a9eff" opacity="0.15" stroke="#4a9eff" stroke-width="2"/>
+    <text x="100" y="30" font-family="Inter, Arial, sans-serif" font-size="16" fill="#4a9eff" text-anchor="middle" font-weight="700">Vision Sensors</text>
+
+    <rect x="15" y="50" width="170" height="35" rx="5" fill="#001F3F" stroke="#4a9eff"/>
+    <text x="100" y="72" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">RGB Cameras</text>
+
+    <rect x="15" y="95" width="170" height="35" rx="5" fill="#001F3F" stroke="#4a9eff"/>
+    <text x="100" y="117" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Depth Cameras (RGB-D)</text>
+
+    <rect x="15" y="140" width="170" height="35" rx="5" fill="#001F3F" stroke="#4a9eff"/>
+    <text x="100" y="162" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Stereo Vision</text>
+  </g>
+
+  <!-- Category 2: Range Sensors -->
+  <g transform="translate(350, 100)">
+    <rect x="0" y="0" width="200" height="200" rx="12" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="2"/>
+    <text x="100" y="30" font-family="Inter, Arial, sans-serif" font-size="16" fill="#10b981" text-anchor="middle" font-weight="700">Range Sensors</text>
+
+    <rect x="15" y="50" width="170" height="35" rx="5" fill="#001F3F" stroke="#10b981"/>
+    <text x="100" y="72" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">LiDAR</text>
+
+    <rect x="15" y="95" width="170" height="35" rx="5" fill="#001F3F" stroke="#10b981"/>
+    <text x="100" y="117" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Ultrasonic</text>
+
+    <rect x="15" y="140" width="170" height="35" rx="5" fill="#001F3F" stroke="#10b981"/>
+    <text x="100" y="162" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Time-of-Flight (ToF)</text>
+  </g>
+
+  <!-- Category 3: Proprioceptive -->
+  <g transform="translate(600, 100)">
+    <rect x="0" y="0" width="200" height="200" rx="12" fill="#f59e0b" opacity="0.15" stroke="#f59e0b" stroke-width="2"/>
+    <text x="100" y="30" font-family="Inter, Arial, sans-serif" font-size="16" fill="#f59e0b" text-anchor="middle" font-weight="700">Proprioceptive</text>
+
+    <rect x="15" y="50" width="170" height="35" rx="5" fill="#001F3F" stroke="#f59e0b"/>
+    <text x="100" y="72" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Joint Encoders</text>
+
+    <rect x="15" y="95" width="170" height="35" rx="5" fill="#001F3F" stroke="#f59e0b"/>
+    <text x="100" y="117" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">IMU (6-DOF)</text>
+
+    <rect x="15" y="140" width="170" height="35" rx="5" fill="#001F3F" stroke="#f59e0b"/>
+    <text x="100" y="162" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Gyroscope</text>
+  </g>
+
+  <!-- Category 4: Force/Torque -->
+  <g transform="translate(100, 340)">
+    <rect x="0" y="0" width="200" height="200" rx="12" fill="#ef4444" opacity="0.15" stroke="#ef4444" stroke-width="2"/>
+    <text x="100" y="30" font-family="Inter, Arial, sans-serif" font-size="16" fill="#ef4444" text-anchor="middle" font-weight="700">Force/Torque</text>
+
+    <rect x="15" y="50" width="170" height="35" rx="5" fill="#001F3F" stroke="#ef4444"/>
+    <text x="100" y="72" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">6-Axis F/T Sensors</text>
+
+    <rect x="15" y="95" width="170" height="35" rx="5" fill="#001F3F" stroke="#ef4444"/>
+    <text x="100" y="117" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Strain Gauges</text>
+
+    <rect x="15" y="140" width="170" height="35" rx="5" fill="#001F3F" stroke="#ef4444"/>
+    <text x="100" y="162" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Load Cells</text>
+  </g>
+
+  <!-- Category 5: Tactile -->
+  <g transform="translate(350, 340)">
+    <rect x="0" y="0" width="200" height="200" rx="12" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="100" y="30" font-family="Inter, Arial, sans-serif" font-size="16" fill="#8b5cf6" text-anchor="middle" font-weight="700">Tactile Sensors</text>
+
+    <rect x="15" y="50" width="170" height="35" rx="5" fill="#001F3F" stroke="#8b5cf6"/>
+    <text x="100" y="72" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Capacitive Arrays</text>
+
+    <rect x="15" y="95" width="170" height="35" rx="5" fill="#001F3F" stroke="#8b5cf6"/>
+    <text x="100" y="117" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Resistive Skin</text>
+
+    <rect x="15" y="140" width="170" height="35" rx="5" fill="#001F3F" stroke="#8b5cf6"/>
+    <text x="100" y="162" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Piezoelectric</text>
+  </g>
+
+  <!-- Category 6: Environmental -->
+  <g transform="translate(600, 340)">
+    <rect x="0" y="0" width="200" height="200" rx="12" fill="#06b6d4" opacity="0.15" stroke="#06b6d4" stroke-width="2"/>
+    <text x="100" y="30" font-family="Inter, Arial, sans-serif" font-size="16" fill="#06b6d4" text-anchor="middle" font-weight="700">Environmental</text>
+
+    <rect x="15" y="50" width="170" height="35" rx="5" fill="#001F3F" stroke="#06b6d4"/>
+    <text x="100" y="72" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Temperature</text>
+
+    <rect x="15" y="95" width="170" height="35" rx="5" fill="#001F3F" stroke="#06b6d4"/>
+    <text x="100" y="117" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Proximity</text>
+
+    <rect x="15" y="140" width="170" height="35" rx="5" fill="#001F3F" stroke="#06b6d4"/>
+    <text x="100" y="162" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle">Gas/Chemical</text>
+  </g>
+
+  <!-- Footer note -->
+  <text x="450" y="580" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a9eff" text-anchor="middle">
+    Sensor fusion combines multiple sensor types for robust perception
+  </text>
+</svg>
