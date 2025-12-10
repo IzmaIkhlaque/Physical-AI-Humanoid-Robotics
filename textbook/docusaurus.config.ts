@@ -14,7 +14,11 @@ const config: Config = {
   baseUrl: '/',
 
   customFields: {
-    apiUrl: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000',
+    // In production (Vercel), API is on same domain at /api
+    // In development, use localhost backend
+    apiUrl: process.env.NODE_ENV === 'production'
+      ? (process.env.API_URL || '') // Empty string means same-origin /api routes
+      : (process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000'),
   },
 
   organizationName: 'izma',
@@ -80,7 +84,7 @@ const config: Config = {
         },
 
         {
-          href: 'https://github.com/izma/physical-ai-textbook',
+          href: 'https://github.com/IzmaIkhlaque/Physical-AI-Humanoid-Robotics/textbook',
           label: 'GitHub',
           position: 'right',
         },
@@ -131,7 +135,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/izma/physical-ai-textbook',
+              href: 'https://github.com/IzmaIkhlaque/Physical-AI-Humanoid-Robotics/textbook',
             },
           ],
         },

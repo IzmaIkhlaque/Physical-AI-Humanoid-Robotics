@@ -1,0 +1,54 @@
+# Vercel ignore file
+# Files and directories that should not be uploaded to Vercel
+
+# Dependencies
+node_modules
+.pnpm-store
+.npm
+.yarn
+
+# Environment files (use Vercel dashboard for env vars)
+.env
+.env.local
+.env.*.local
+api/.env
+textbook/.env
+
+# Development files
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage
+.nyc_output
+
+# Build artifacts that will be rebuilt
+.docusaurus
+textbook/.docusaurus
+
+# Documentation and examples
+*.md
+!README.md
+VERCEL_DEPLOYMENT_GUIDE.md
+
+# Git
+.git
+.gitignore
+
+# Spec-driven development files (not needed in production)
+.specify
+.claude
+specs
+history

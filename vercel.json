@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "buildCommand": "cd textbook && npm install && npm run build && cd ../api && npm install && npx prisma generate",
+  "installCommand": "npm install --prefix textbook && npm install --prefix api",
+  "outputDirectory": "textbook/build",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/server"
+    }
+  ],
+  "functions": {
+    "api/server.js": {
+      "maxDuration": 30,
+      "memory": 1024,
+      "runtime": "nodejs20.x"
+    }
+  }
+}

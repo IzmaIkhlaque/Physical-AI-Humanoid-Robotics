@@ -24,3 +24,18 @@ coverage/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Vercel
+.vercel
+
+# Prisma
+prisma/migrations/migration_lock.toml
+
+# API-specific
+api/.env
+api/prisma/.env
+
+# Textbook-specific
+textbook/.env
+textbook/.docusaurus
+textbook/build
