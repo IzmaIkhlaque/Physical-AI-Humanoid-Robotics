@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Production URL - update this when deploying
-  url: 'https://physical-ai-textbook.vercel.app',
+  url: 'https://physical-ai-humanoid-robotics-6qjj.vercel.app/',
   baseUrl: '/',
 
   customFields: {
