@@ -1,0 +1,95 @@
+// Prisma schema for Physical AI Textbook
+// Uses Neon PostgreSQL database
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model for authentication and preferences
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String   // Hashed password
+  name      String?
+
+  // Learning preferences
+  experienceLevel String // beginner, intermediate, advanced
+  primaryInterest String // humanoid-robots, industrial-automation, etc.
+  preferredLanguage String @default("en") // en, ur
+
+  // Tracking
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  lastLogin DateTime?
+
+  // Relations
+  progress LearningProgress[]
+  bookmarks Bookmark[]
+  chatHistory ChatHistory[]
+
+  @@index([email])
+}
+
+// Track user progress through lessons
+model LearningProgress {
+  id String @id @default(uuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Lesson tracking
+  partNumber Int
+  chapterNumber Int
+  lessonNumber Int
+  lessonPath String // e.g., "/part1/chapter1/lesson1"
+
+  // Progress data
+  completed Boolean @default(false)
+  completedAt DateTime?
+  timeSpent Int @default(0) // in seconds
+  quizScore Int? // percentage if quiz was taken
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, lessonPath])
+  @@index([userId])
+  @@index([lessonPath])
+}
+
+// Bookmarked pages for quick access
+model Bookmark {
+  id String @id @default(uuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  lessonPath String
+  lessonTitle String
+  notes String? // User's personal notes
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, lessonPath])
+  @@index([userId])
+}
+
+// Chat history with AI assistant
+model ChatHistory {
+  id String @id @default(uuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  message String
+  response String
+  skill String? // Which AI skill was used
+  context String? // Selected text or page context
+
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([createdAt])
+}
