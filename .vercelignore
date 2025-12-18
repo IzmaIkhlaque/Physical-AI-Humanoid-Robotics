@@ -38,10 +38,9 @@ coverage
 .docusaurus
 textbook/.docusaurus
 
-# Documentation and examples
-*.md
+# Documentation and examples (ignore only root-level docs, not textbook content!)
+/*.md
 !README.md
-VERCEL_DEPLOYMENT_GUIDE.md
 
 # Git
 .git
