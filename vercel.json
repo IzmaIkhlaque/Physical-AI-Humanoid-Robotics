@@ -1,7 +1,5 @@
 {
-  "version": 2,
   "buildCommand": "cd textbook && npm install && npm run build && cd ../api && npm install && npx prisma generate",
-  "installCommand": "npm install --prefix textbook && npm install --prefix api",
   "outputDirectory": "textbook/build",
   "rewrites": [
     {
