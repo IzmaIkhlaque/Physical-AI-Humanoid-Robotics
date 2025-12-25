@@ -1,7 +1,18 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(mkdir:*)",
+      "Bash(xcopy /E /I /Y \"docs\\*\" \"i18n\\ur\\docusaurus-plugin-content-docs\\current\")",
+      "Bash(npm run build:*)",
+      "Bash(npm run serve:*)",
+      "Bash(find:*)",
+      "Bash(python translate_helper.py:*)",
+      "Bash(git add:*)",
+      "Bash(python translate_critical_files.py:*)"
     ],
     "deny": [],
     "ask": []
