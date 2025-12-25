@@ -27,9 +27,13 @@ export default function LoginPage() {
     if (!success) {
       setError(error || 'Login failed. Please try again.');
     } else {
-      // Redirect to home
+      // Check for redirect parameter in URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirectUrl = urlParams.get('redirect');
+
+      // Redirect to the original page or home
       setTimeout(() => {
-        window.location.href = '/';
+        window.location.href = redirectUrl || '/';
       }, 500);
     }
   };
