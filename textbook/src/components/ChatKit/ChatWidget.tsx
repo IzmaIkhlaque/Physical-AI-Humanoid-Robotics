@@ -138,18 +138,53 @@ export default function ChatWidget() {
     setShowSkills(false);
     setIsLoading(true);
 
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 700));
+    try {
+      // Call RAG backend API
+      const apiUrl = (window as any).docusaurusConfig?.customFields?.apiUrl || '';
+      const token = localStorage.getItem('token');
 
-    const response: Message = {
-      id: (Date.now() + 1).toString(),
-      role: 'assistant',
-      content: generateAIResponse(content, skill),
-      timestamp: new Date(),
-    };
+      const ragResponse = await fetch(`${apiUrl}/api/chat/rag`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          message: content,
+          skill: skill?.id,
+          context: window.location.pathname, // Current lesson path
+        }),
+      });
 
-    setMessages(prev => [...prev, response]);
-    setIsLoading(false);
+      if (!ragResponse.ok) {
+        throw new Error('RAG API request failed');
+      }
+
+      const data = await ragResponse.json();
+
+      const response: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: data.response || generateAIResponse(content, skill),
+        timestamp: new Date(),
+      };
+
+      setMessages(prev => [...prev, response]);
+    } catch (error) {
+      console.error('RAG error:', error);
+
+      // Fallback to simulated response if RAG fails
+      const response: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: generateAIResponse(content, skill),
+        timestamp: new Date(),
+      };
+
+      setMessages(prev => [...prev, response]);
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   const handleSkillClick = (skill: Skill) => {
@@ -295,7 +330,7 @@ export default function ChatWidget() {
                   AI Learning Assistant
                 </h3>
                 <p style={{ margin: 0, fontSize: '0.75rem', opacity: 0.8 }}>
-                  25+ Skills • OpenAI Agents SDK
+                  25+ Skills • RAG-Powered • Gemini
                 </p>
               </div>
             </div>

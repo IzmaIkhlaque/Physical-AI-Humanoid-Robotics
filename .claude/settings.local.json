@@ -12,7 +12,8 @@
       "Bash(find:*)",
       "Bash(python translate_helper.py:*)",
       "Bash(git add:*)",
-      "Bash(python translate_critical_files.py:*)"
+      "Bash(python translate_critical_files.py:*)",
+      "Bash(python translate_all_remaining.py:*)"
     ],
     "deny": [],
     "ask": []

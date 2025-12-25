@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory, useLocation } from '@docusaurus/router';
 import ChatWidget from '../components/ChatKit/ChatWidget';
 import UserMenu from '../components/UserMenu';
+import PersonalizeTips from '../components/PersonalizeTips';
 import { AuthProvider, useAuth } from '../context/AuthContext';
 
 // Urdu route guard component
@@ -58,6 +59,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
       </UrduRouteGuard>
       <ChatWidget />
       <UserMenu />
+      <PersonalizeTips />
     </AuthProvider>
   );
 }

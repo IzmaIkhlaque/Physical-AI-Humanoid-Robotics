@@ -45,6 +45,10 @@ const config: Config = {
     },
   },
 
+  // Custom i18n configuration
+  onDuplicateRoutes: 'warn',
+  trailingSlash: false,
+
   presets: [
     [
       'classic',

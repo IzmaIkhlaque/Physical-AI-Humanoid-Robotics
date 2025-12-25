@@ -18,7 +18,7 @@ if not GEMINI_API_KEY:
     exit(1)
 
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')  # Updated to latest stable model
 
 # Critical files to translate (in order of importance)
 CRITICAL_FILES = [

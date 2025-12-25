@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd textbook && pnpm install && pnpm run build && cd ../api && pnpm install && pnpm exec prisma db push --accept-data-loss && pnpm exec prisma generate",
+  "buildCommand": "cd textbook && npm install && npm run build && cd ../api && npm install && npx prisma db push --accept-data-loss && npx prisma generate",
   "outputDirectory": "textbook/build",
-  "installCommand": "pnpm install",
+  "installCommand": "npm install",
   "framework": null,
   "rewrites": [
     {

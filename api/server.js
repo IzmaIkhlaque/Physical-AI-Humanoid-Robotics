@@ -6,9 +6,16 @@ import jwt from 'jsonwebtoken';
 import { PrismaClient } from '@prisma/client';
 import { QdrantClient } from '@qdrant/qdrant-js';
 import translationsRouter from './routes/translations.js';
+import chatRouter from './routes/chat.js';
 
-// Load environment variables
-dotenv.config();
+// Load environment variables from parent directory
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 // Initialize Express app
 const app = express();
@@ -196,6 +203,7 @@ app.get('/api/auth/me', async (req, res) => {
         experienceLevel: user.experienceLevel,
         primaryInterest: user.primaryInterest,
         preferredLanguage: user.preferredLanguage,
+        translationPoints: user.translationPoints || 0,
       },
     });
   } catch (error) {
@@ -470,6 +478,9 @@ app.post('/api/chat/message', async (req, res) => {
 
 // Register translation routes (Hackathon feature - Chapter translation tracking)
 app.use('/api/user', translationsRouter);
+
+// Register RAG chat routes (Hackathon feature - AI Assistant with RAG)
+app.use('/api/chat', chatRouter);
 
 // Start server only if not running in Vercel serverless environment
 if (!process.env.VERCEL) {

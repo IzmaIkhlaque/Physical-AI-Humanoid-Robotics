@@ -29,7 +29,7 @@ const authenticateToken = (req, res, next) => {
 router.post('/track-translation', authenticateToken, async (req, res) => {
   try {
     const { chapterSlug } = req.body;
-    const userId = req.user.id;
+    const userId = req.user.userId; // JWT payload has userId, not id
 
     if (!chapterSlug) {
       return res.status(400).json({ error: 'Chapter slug required' });
