@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd textbook && pnpm install && pnpm run build && cd ../api && pnpm install && pnpm exec prisma migrate deploy && pnpm exec prisma generate",
+  "buildCommand": "cd textbook && pnpm install && pnpm run build && cd ../api && pnpm install && pnpm exec prisma db push --accept-data-loss && pnpm exec prisma generate",
   "outputDirectory": "textbook/build",
   "installCommand": "pnpm install",
   "framework": null,
