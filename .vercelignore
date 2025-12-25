@@ -6,6 +6,9 @@ node_modules
 .pnpm-store
 .npm
 .yarn
+pnpm-lock.yaml
+api/pnpm-lock.yaml
+textbook/pnpm-lock.yaml
 
 # Environment files (use Vercel dashboard for env vars)
 .env
