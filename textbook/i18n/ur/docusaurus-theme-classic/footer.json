@@ -1,0 +1,38 @@
+{
+  "link.title.Content": {
+    "message": "مواد",
+    "description": "The title of the footer links column with title=Content in the footer"
+  },
+  "link.title.Resources": {
+    "message": "وسائل",
+    "description": "The title of the footer links column with title=Resources in the footer"
+  },
+  "link.item.label.Part 1: Introduction to Physical AI": {
+    "message": "حصہ 1: فزیکل AI کا تعارف",
+    "description": "The label of footer link with label=Part 1: Introduction to Physical AI linking to /part1/chapter1-what-is-physical-ai/lesson1-defining-physical-ai"
+  },
+  "link.item.label.Part 2: Humanoid Robotics": {
+    "message": "حصہ 2: ہیومنائڈ روبوٹکس",
+    "description": "The label of footer link with label=Part 2: Humanoid Robotics linking to /part2/chapter1-humanoid-design/lesson1-biped-mechanics"
+  },
+  "link.item.label.Part 3: Sensors & Perception": {
+    "message": "حصہ 3: سینسرز اور ادراک",
+    "description": "The label of footer link with label=Part 3: Sensors & Perception"
+  },
+  "link.item.label.Part 4: Advanced Applications": {
+    "message": "حصہ 4: جدید ایپلیکیشنز",
+    "description": "The label of footer link with label=Part 4: Advanced Applications"
+  },
+  "link.item.label.Part 5: Societal Integration and Advanced Concepts": {
+    "message": "حصہ 5: سماجی انضمام اور جدید تصورات",
+    "description": "The label of footer link with label=Part 5"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/IzmaIkhlaque/Physical-AI-Humanoid-Robotics/textbook"
+  },
+  "copyright": {
+    "message": "کاپی رائٹ © عزمیٰ کی فزیکل AI اور ہیومنائڈ روبوٹکس کی کتاب۔ Docusaurus کے ساتھ بنایا گیا۔",
+    "description": "The footer copyright"
+  }
+}

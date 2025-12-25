@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "عزمیٰ کی فزیکل AI اور ہیومنائڈ روبوٹکس کی کتاب",
+    "description": "The title in the navbar"
+  },
+  "item.label.Start Reading": {
+    "message": "پڑھنا شروع کریں",
+    "description": "Navbar item with label Start Reading"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Login": {
+    "message": "لاگ ان",
+    "description": "Navbar item with label Login"
+  },
+  "item.label.Sign Up": {
+    "message": "سائن اپ",
+    "description": "Navbar item with label Sign Up"
+  }
+}

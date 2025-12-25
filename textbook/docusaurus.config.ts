@@ -27,10 +27,22 @@ const config: Config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Internationalization (disabled - search enabled instead)
+  // Internationalization - English and Urdu
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ur'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      ur: {
+        label: 'اردو',
+        direction: 'rtl',
+        htmlLang: 'ur-PK',
+      },
+    },
   },
 
   presets: [
@@ -82,7 +94,10 @@ const config: Config = {
           position: 'left',
           label: 'Start Reading',
         },
-
+        {
+          type: 'localeDropdown',
+          position: 'left',
+        },
         {
           href: 'https://github.com/IzmaIkhlaque/Physical-AI-Humanoid-Robotics/textbook',
           label: 'GitHub',
