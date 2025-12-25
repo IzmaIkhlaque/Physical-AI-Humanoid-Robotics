@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd textbook && npm install --legacy-peer-deps && npm run build && cd ../api && npm install --legacy-peer-deps && npx prisma db push --accept-data-loss && npx prisma generate",
+  "buildCommand": "cd textbook && npm install && npm run build && cd ../api && npm install && npx prisma db push --accept-data-loss && npx prisma generate",
   "outputDirectory": "textbook/build",
-  "installCommand": "npm install --legacy-peer-deps",
+  "installCommand": "npm install",
   "framework": null,
   "rewrites": [
     {
