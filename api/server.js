@@ -5,6 +5,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { PrismaClient } from '@prisma/client';
 import { QdrantClient } from '@qdrant/qdrant-js';
+import translationsRouter from './routes/translations.js';
 
 // Load environment variables
 dotenv.config();
@@ -466,6 +467,9 @@ app.post('/api/chat/message', async (req, res) => {
     res.status(500).json({ error: 'Failed to save chat message' });
   }
 });
+
+// Register translation routes (Hackathon feature - Chapter translation tracking)
+app.use('/api/user', translationsRouter);
 
 // Start server only if not running in Vercel serverless environment
 if (!process.env.VERCEL) {

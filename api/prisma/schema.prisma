@@ -27,10 +27,14 @@ model User {
   updatedAt DateTime @updatedAt
   lastLogin DateTime?
 
+  // Gamification
+  translationPoints Int @default(0) // Bonus points for Urdu translations (max 50)
+
   // Relations
   progress LearningProgress[]
   bookmarks Bookmark[]
   chatHistory ChatHistory[]
+  chapterTranslations ChapterTranslation[]
 
   @@index([email])
 }
@@ -92,4 +96,19 @@ model ChatHistory {
 
   @@index([userId])
   @@index([createdAt])
+}
+
+// Track chapter translations for bonus points (Hackathon feature)
+model ChapterTranslation {
+  id String @id @default(uuid())
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  chapterSlug String // e.g., "part1-chapter1-what-is-physical-ai"
+  translatedAt DateTime @default(now())
+  pointsEarned Int @default(5) // Points earned for this translation
+
+  @@unique([userId, chapterSlug])
+  @@index([userId])
+  @@index([translatedAt])
 }
